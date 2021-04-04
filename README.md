@@ -5,9 +5,9 @@ Calc and plot gpa |data collected with py-librus-api|
  ![alt text](https://i.imgur.com/CZQl0y6.png)
  
  # how to
- Create txt file and fill it like this
+ Create txt file and fill it like thisCancel changes
 ```
 login
-passwor
+password
 ```
-then open gpa file and choose your data file.
+then open gpa script and choose your data file.
