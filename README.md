@@ -1,5 +1,5 @@
 # gpa
-Calc and plot gpa |data collected with py-librus-api|
+Calc and plot gpa [data collected with py-librus-api]
 
 # plot 
  ![alt text](https://i.imgur.com/CZQl0y6.png)
