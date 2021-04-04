@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import math as m
+
 from msvcrt import getch
-
-
 from py_librus_api import Librus
 from tkinter import filedialog
 from tkinter import Tk
@@ -76,7 +75,7 @@ def gpa(grades):
     _gpa = {i : None for i in grades}
     for subj, _grades in grades.items():
         try:
-            temp = sum([i[0]*i[1] for i in _grades])/sum([i[1] for i in _grades])
+            temp = sum([i[0]*i[1] for i in _grades]) / sum([i[1] for i in _grades])
         except ZeroDivisionError:
             temp = 0
         _gpa[subj] = round(temp, 2)
@@ -95,15 +94,15 @@ def plot(gpa, ngpa):
     _gpa = ax.bar(x, y, width=width, label = 'Średnie cząstkowe')
 
     x, y = zip(*ngpa.items())
-    _ngpa = ax.bar(x, y, width=width, label = 'Średnia ocen')
+    _ngpa = ax.bar(x, y, width = width, label = 'Średnia ocen')
 
-    ax.legend(loc=3)
+    ax.legend(loc = 3)
     ax.set_ylabel('Średnia')
-    ax.bar_label(_gpa, padding=0)
-    ax.bar_label(_ngpa, padding=0)
+    ax.bar_label(_gpa, padding = 0)
+    ax.bar_label(_ngpa, padding = 0)
 
     plt.get_current_fig_manager().set_window_title('GPA')
-    plt.xticks(rotation=90, fontsize= 'small',)
+    plt.xticks(rotation = 90, fontsize = 'small',)
     fig.savefig('gpa.png')
     plt.show()
 
@@ -131,5 +130,5 @@ def main():
     plot(Gpa, Ngpa)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
