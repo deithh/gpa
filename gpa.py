@@ -1,11 +1,15 @@
 import matplotlib.pyplot as plt
 import math as m
+from msvcrt import getch
+
 
 from py_librus_api import Librus
 from tkinter import filedialog
 from tkinter import Tk
 from textwrap import wrap
 from matplotlib import rcParams
+from time import sleep
+
 
 def get_login_data():
     Tk().withdraw()
@@ -21,11 +25,18 @@ def get_login_data():
 
 def login(login, password):
     librus = Librus()
-    while not librus.logged_in:
+    for i in range(10):
         if not librus.login(login, password):
-            print("Log in failed! Check your username and/or password!")
+            continue
         else:
             print("Logged in successfully!")
+    if not librus.logged_in:
+
+        print('Login Failed!')
+        print('Press Any Key To Exit...')
+        getch()
+        exit()
+
     return librus
 
 def grades(librus):
